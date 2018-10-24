@@ -1,0 +1,39 @@
+<footer class="footer ">
+  <!-- <div class="content__wrapper"> -->
+    <div class="footer__content">
+
+      <p>© Grupo Cargo Services</p>
+      <ul class="footer__content__nav">
+        <li>
+          <a href="{{ url_to(  trans('theme::route.privacy-policy') ) }}">{{  trans('theme::footer.privacy-policy')  }}</a>
+        </li>
+        <li>
+          <a href="{{ url_to(  trans('theme::route.legal-notice') ) }}">{{  trans('theme::footer.legal-notice')  }}</a>
+        </li>
+        <li>
+          <a href="{{ url_to(  trans('theme::route.cookies') ) }}">{{  trans('theme::footer.cookies')  }}</a>
+        </li>
+      </ul>
+
+    </div>
+    <div class="footer__social">
+      <ul>
+          <li>
+              <a href="https://www.facebook.com/sharer/sharer.php?u={% if app.request.uri is defined %} {{ app.request.uri }} {% else %} {{ url() }} {% endif %}" target="_blank">
+                  <span class="icon icon-facebook"></span>
+              </a>
+          </li>
+          <li>
+              <a href="https://twitter.com/home?status={{ app.request.uri }}" target="_blank">
+                  <span class="icon icon-twitter"></span>
+              </a>
+          </li>
+          <li>
+              <a href="https://plus.google.com/share?url={{ app.request.uri }}" target="_blank">
+                  <span class="icon icon-gplus"></span>
+              </a>
+          </li>
+      </ul>
+    </div>
+</footer>
+

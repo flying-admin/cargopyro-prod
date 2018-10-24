@@ -1,0 +1,143 @@
+{% htmlcompress %}
+<!doctype html>
+
+<!--[if lt IE 7]>
+<html class="nojs ms lt_ie7" lang="en"><![endif]-->
+<!--[if IE 7]>
+<html class="nojs ms ie7" lang="en"><![endif]-->
+<!--[if IE 8]>
+<html class="nojs ms ie8" lang="en"><![endif]-->
+<!--[if gt IE 8]>
+<html class="nojs ms" lang="en"><![endif]-->
+
+<html>
+  <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5D9PJQW');</script>
+    <!-- End Google Tag Manager -->
+
+    {% include "theme::partials/metadata" %}
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5D9PJQW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+  <div class="body-wrapper">
+
+    {% include "theme::partials/header" %}
+
+    <div class="content__wrapper" >
+
+      {% include "theme::partials/messages" %}
+      {% block content %}{% endblock %}
+
+    </div>
+
+    {% include "theme::partials/footer" %}
+
+    </div>
+    <div class="modal budget-modal" data-modal="budget-modal" data-modal-close>
+      <div class="modal__dialog">
+        <div class="modal__dialog__close" data-modal-close></div>
+        <div class="modal__dialog__wrapper">
+          <div class="modal__dialog__wrapper__title">
+            <p class="small">
+                {{ trans('theme::home.form_intro') }}
+            </p>
+            <p class="title">
+                {{ trans('theme::home.form_intro_1') }}
+            </p>
+          </div>
+          <div class="modal__dialog__wrapper__content">
+            <div class="budget-modal__wrap__form">
+                {%  set form = form('contact').fields({
+
+                    'estimationorigin': {
+                        'placeholder': trans('theme::home.form_field_origin')    ,
+                        'label':   trans('theme::home.form_field_origin')    ,
+                        'type': 'anomaly.field_type.text',
+                        'required': true,
+                        'class': 'input__field'
+                    },
+                    'estimationdestination': {
+                        'placeholder':    trans('theme::home.form_field_destination')    ,
+                        'label':   trans('theme::home.form_field_destination')   ,
+                        'type': 'anomaly.field_type.text',
+                        'required': true,
+                        'class': 'input__field'
+                    },
+                    'estimationweight': {
+                        'placeholder':    trans('theme::home.form_field_weigh')    ,
+                        'label':   trans('theme::home.form_field_weigh')   ,
+                        'type': 'anomaly.field_type.text',
+                        'required': true,
+                        'class': 'input__field'
+                    },
+                    'estimationemail': {
+                        'placeholder':    trans('theme::home.form_field_email')    ,
+                        'label':   trans('theme::home.form_field_email')   ,
+                        'type': 'anomaly.field_type.email',
+                        'required': true,
+                        'class': 'input__field'
+                    }
+                }).actions(
+                    {'submit':{
+                        'class':'btn btn--primary btn--block',
+                        'text':    trans('theme::home.form_field_button')
+                    }
+                  }).to('alex@flyingpigs.es').from('hola@flyingpigs.es').get %}
+
+                {{ form.open|raw }}
+
+              <div class="input ">
+                <label for="estimation-origin" class="input__label">
+                  <span class="icon icon-location"></span>
+                </label>
+                  {{ form.fields.estimationorigin.input|raw }}
+              </div>
+              <div class="input ">
+                <label for="estimation-destination" class="input__label">
+                  <span class="icon icon-location"></span>
+                </label>
+                  {{ form.fields.estimationdestination.input|raw }}
+              </div>
+              <div class="input ">
+                <label for="estimation-weight" class="input__label">
+                  <span class="icon icon-weight"></span>
+                </label>
+                  {{ form.fields.estimationweight.input|raw }}
+              </div>
+              <div class="input ">
+                <label for="estimation-mail" class="input__label">
+                  <span class="icon icon-mail"></span>
+                </label>
+                  {{ form.fields.estimationemail.input|raw }}
+              </div>
+
+                {{ form.actions|raw }}
+
+                {{ form.close|raw }}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- cookie consent -->
+    <div class="cookie-consent cookie-consent-block js-cookie-consent-block" style="display: none;">
+        <p class="text-right"><span type="button" class="js-accept-cookies close "></span></p>
+        <p>{{  trans('theme::cookies.text_1')  }}</p>
+        <p> {{  trans('theme::cookies.text_2')  }}  <a href="{{ url_to(  trans('theme::route.cookies') ) }}" class="link"> {{  trans('theme::cookies.button')  }}</a></p>
+    </div>
+    <!-- ./cookie consent -->
+
+    {% include "theme::partials/assets" %}
+  </body>
+</html>
+{% endhtmlcompress %}

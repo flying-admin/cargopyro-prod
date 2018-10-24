@@ -1,0 +1,184 @@
+<header class="header">
+  <div class="menu-mobile">
+    <ul>
+      <li>
+        <ul class="lang-mobile">
+            {% if app.locale  ==  'en' %}
+              <li>
+                <a href="/{{ str_replace("_","-",page.translation_url) }}" class="">ES</a>
+              </li>
+                <li> <span>/</span> </li>
+              <li>
+                <a href="#" class="active">EN</a>
+              </li>
+            {% else %}
+              <li>
+                <a href="#" class="active">ES</a>
+              </li>
+              <li> <span>/</span> </li>
+              <li>
+                <a href="/en/{{ str_replace("_","-",page.translation_url) }}" class="">EN</a>
+              </li>
+            {% endif %}
+        </ul>
+        <button class="btn-close">
+          <span class="icon icon-close"></span>
+        </button>
+      </li>
+      <li class="">
+        <div class="dropdown">
+          <a href="{{ url_to(  trans('theme::route.services') ) }}" class="btn-dropdown">{%  if trans('theme::route.services') == page.slug %} <h1>{% endif %} {{ trans('theme::header.Servicios') }}{%  if trans('theme::route.services') == page.slug %} </h1>{% endif %}
+            <span class="icon icon-angle-down"></span>
+          </a>
+          <div class="dropdown-list">
+            <ul>
+              <li>
+                <a href="{{ url_to(  trans('theme::route.services') ) }}#ground">{{ trans('theme::header.Terrestre') }}</a>
+              </li>
+              <li>
+                <a href="{{ url_to(  trans('theme::route.services') ) }}#marine">{{ trans('theme::header.Maritimo') }}</a>
+              </li>
+              <li>
+                <a href="{{ url_to(  trans('theme::route.services') ) }}#aerial">{{ trans('theme::header.Aereo') }}</a>
+              </li>
+              <li>
+                <a href="{{ url_to(  trans('theme::route.services') ) }}#cross-trade">{{ trans('theme::header.Cross_Trade') }}</a>
+              </li>
+              <li>
+                <a href="{{ url_to(  trans('theme::route.services') ) }}#projects">{{ trans('theme::header.Proyectos') }}</a>
+              </li>
+              <li>
+                <a href="{{ url_to(  trans('theme::route.services') ) }}#customs">{{ trans('theme::header.Aduanas') }}</a>
+              </li>
+              <li>
+                <a href="{{ url_to(  trans('theme::route.services') ) }}#warehouses">{{ trans('theme::header.Almacenes') }}</a>
+              </li>
+              <li>
+                <a href="{{ url_to(  trans('theme::route.services') ) }}#insurance">{{ trans('theme::header.Seguros') }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="">
+        <div class="dropdown">
+          <a href="{{ url_to( trans('theme::route.company') ) }}" class="btn-dropdown">{%  if trans('theme::route.company') == page.slug %} <h1>  {% endif %} {{ trans('theme::header.Empresa') }}{%  if trans('theme::route.company') == page.slug %} </h1>  {% endif %}
+            <span class="icon icon-angle-down"></span>
+          </a>
+          <div class="dropdown-list">
+            <ul>
+              <li>
+                <a href="{{ url_to( trans('theme::route.company') ) }}#history">{{ trans('theme::header.Historia') }}</a>
+              </li>
+              <li>
+                <a href="{{ url_to( trans('theme::route.company') ) }}#philosophy">{{ trans('theme::header.Nuestra_filosofia') }}</a>
+              </li>
+              <li>
+                <a href="{{ url_to( trans('theme::route.company') ) }}#comany-pol">{{ trans('theme::header.Politica_de_empresa') }}</a>
+              </li>
+              <li>
+                <a href="{{ url_to( trans('theme::route.company') ) }}#qa">{{ trans('theme::header.Calidad') }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="">
+        <a href="{{ url_to( trans('theme::route.news') ) }}">{%  if  trans('theme::route.news') ==  app.request.requestUri |replace({'/': ""}) %}<h1>{% endif %}{{ trans('theme::header.Noticias') }}{%  if  trans('theme::route.news') ==  app.request.requestUri |replace({'/': ""}) %}</h1>{% endif %}</a>
+      </li>
+      <li class="">
+        <a href="{{ url_to( trans('theme::route.contact') ) }}">{%  if trans('theme::route.contact') == page.slug %} <h1> {% endif %}{{ trans('theme::header.Contacto') }}{%  if trans('theme::route.contact') == page.slug %} </h1> {% endif %}</a>
+      </li>
+      <li class="close-menu">
+        <a href="#" class="btn btn--primary" data-modal-open="budget-modal">{{ trans('theme::header.Pidenos_presupuesto') }}</a>
+      </li>
+    </ul>
+  </div>
+  <a href="{{ ( app.locale  ==  'en')?  url_to( 'home' ) :  url( '/' )  }}" class="header__logo">
+    <img src="{{ image_url('theme::images/content/logo-web.svg') }}" class="header__logo__logo" alt="Logo Cargo Services" />
+  </a>
+  <div class="header__navs">
+    <div class="header__navs__info">
+      <ul class="header__navs__info__left">
+        <li>
+          <a href="#" class="localiza-oficina" data-scroll="#map">
+            <!-- falta enlace -->
+            <span class="icon icon-location"></span>
+            <span class="text">{{ trans('theme::header.Localiza_tu_oficina') }}</span>
+          </a>
+        </li>
+        <li class="phone-number">
+          <a href="tel:+34 91 434 1820">
+            <span class="icon icon-phone"></span>
+            <span class="text">(+34) 914 341 820</span>
+          </a>
+        </li>
+        <li class="mail-address">
+          <a href="mailto:infomad@cargoservicesgroup.com">
+            <span class="icon icon-mail"></span>
+            <span class="text">infomad@cargoservicesgroup.com</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="header__navs__info__right hide-on-mobile">
+          {% if app.locale  ==  'en' %}
+            <li>
+                {%  if  trans('theme::route.news') ==  app.request.requestUri |replace({'/': ""}) %}
+                  <a href="/noticias" class="">ES</a>
+                {% elseif 'posts' in app.request.pathinfo  %}
+                  <a href="{{ app.request.requestUri }}" class="">ES</a>
+                {%  elseif   page.translation_url | length != 0 %}
+                  <a href="/{{ str_replace("_","-",page.translation_url) }}" class="">ES</a>
+                {% else %}
+                  <a href="/" class="">ES</a>
+                {% endif  %}
+            </li>
+            <li>
+              <a href="#" class="active">EN</a>
+            </li>
+          {% else %}
+            <li>
+              <a href="#" class="active">ES</a>
+            </li>
+            <li>
+                {% if  trans('theme::route.news') ==  app.request.requestUri |replace({'/': ""}) %}
+                  <a href="/en/news" class="">EN</a>
+                {% elseif 'posts' in app.request.pathinfo  %}
+                  <a href="/en{{ app.request.requestUri }}" class="">EN</a>
+                {%  elseif   page.translation_url | length != 0 %}
+                  <a href="/en/{{ str_replace("_","-",page.translation_url) }}" class="">EN</a>
+                {% else %}
+                  <a href="/en" class="">EN</a>
+                {% endif %}
+            </li>
+          {% endif %}
+      </ul>
+    </div>
+
+    <div class="header__navs__menu">
+      <ul>
+        <li class="{%  if trans('theme::route.services') == page.slug %} active  {% endif %} ">
+          <a href=" {{ url_to(  trans('theme::route.services') ) }}">{%  if trans('theme::route.services') == page.slug %} <h1>{% endif %}{{ trans('theme::header.Servicios') }}{%  if trans('theme::route.services') == page.slug %} </h1>   {% endif %}</a>
+        </li>
+        <li class="{%  if trans('theme::route.company') == page.slug %} active  {% endif %} ">
+          <a href="{{ url_to( trans('theme::route.company') ) }} ">{%  if trans('theme::route.company') == page.slug %} <h1>  {% endif %}{{ trans('theme::header.Empresa') }}{%  if trans('theme::route.company') == page.slug %} </h1>  {% endif %}</a>
+        </li>
+        <li class="{%  if  trans('theme::route.news') ==  app.request.requestUri |replace({'/': ""}) %} active  {% endif %} " data-news>
+          <a href="{{ url_to( trans('theme::route.news') ) }} ">{%  if  trans('theme::route.news') ==  app.request.requestUri |replace({'/': ""}) %}<h1>{% endif %}{{ trans('theme::header.Noticias') }}{%  if  trans('theme::route.news') ==  app.request.requestUri |replace({'/': ""}) %}</h1>  {% endif %}</a>
+        </li>
+        <li class="{%  if trans('theme::route.contact') == page.slug %} active  {% endif %} ">
+          <a href="{{ url_to( trans('theme::route.contact') ) }}">{%  if trans('theme::route.contact') == page.slug %} <h1> {% endif %} {{ trans('theme::header.Contacto') }}{%  if trans('theme::route.contact') == page.slug %} </h1>  {% endif %} </a>
+        </li>
+      </ul>
+      <button class="btn-menu-mobile">
+        <span class="menu-bar"></span>
+      </button>
+    </div>
+  </div>
+  <a href="#" class="btn btn--primary  btn-budget" data-modal-open="budget-modal">{{ trans('theme::header.Pidenos_presupuesto') }}</a>
+</header>
+
+
+
+{#dump('post' in app.request.pathinfo)#}
+{# dump(app.request.requestUri) #}

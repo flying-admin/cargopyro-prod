@@ -1,0 +1,50 @@
+// @font-face {
+//  font-family: 'Fontname';
+//  src: font-url('Fontname-variant.eot');
+//   src: font-url('Fontname-variant.eot?#iefix') format('embedded-opentype'),
+//        font-url('Fontname-variant.woff2') format('woff2'),
+//        font-url('Fontname-variant.woff') format('woff');
+//  font-weight: normal;
+//  font-style: normal;
+// }
+
+@font-face {
+  font-family: 'Anton';
+  src: url('{{ asset_path("theme::fonts/anton-regular.eot") }}');
+  src: url('{{ asset_path("theme::fonts/anton-regular.eot?#iefix") }}') format('embedded-opentype'),
+       url('{{ asset_path("theme::fonts/anton-regular.woff2") }}') format('woff2'),
+       url('{{ asset_path("theme::fonts/anton-regular.woff") }}') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src:  url('{{ asset_path("theme::fonts/lato-regular.eot") }}');
+  src:  url('{{ asset_path("theme::fonts/lato-regular.eot?#iefix") }}') format('embedded-opentype'),
+        url('{{ asset_path("theme::fonts/lato-regular.woff2") }}') format('woff2'),
+        url('{{ asset_path("theme::fonts/lato-regular.woff") }}') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src:  url('{{ asset_path("theme::fonts/lato-light.eot") }}');
+  src:  url('{{ asset_path("theme::fonts/lato-light.eot?#iefix") }}') format('embedded-opentype'),
+        url('{{ asset_path("theme::fonts/lato-light.woff2") }}') format('woff2'),
+        url('{{ asset_path("theme::fonts/lato-light.woff") }}') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src:  url('{{ asset_path("theme::fonts/lato-black.eot") }}');
+  src:  url('{{ asset_path("theme::fonts/lato-black.eot?#iefix") }}') format('embedded-opentype'),
+        url('{{ asset_path("theme::fonts/lato-black.woff2") }}') format('woff2'),
+        url('{{ asset_path("theme::fonts/lato-black.woff") }}') format('woff');
+	font-weight: 900;
+	font-style: normal;
+}
+
