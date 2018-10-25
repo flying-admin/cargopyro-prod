@@ -81,7 +81,6 @@
     padding-bottom: 20px;
     padding-left: 20px;
   }
-
 }
 
 .cookie-consent {
@@ -89,42 +88,51 @@
   bottom: 0px;
   left: 0;
   right: 0;
-  background-color: #fff;
-  padding: 30px 30px 40px;
+  background-color: $white;
+  padding: 30px;
+  padding-right: 40px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.22);
   z-index: 999;
 
-.text-right{
-    text-align: right;
-  }
-  p{
+  p {
     font-size: 16px;
     line-height: 26px;
-    color: #6d6d6d;
-    padding-bottom: 10px;
+    color: $darkgrey;
+    padding: 0;
+    margin: 0;
+
+    & + p {
+      margin: 10px 0 0;
+    }
   }
+
   .close{
-    position: relative;
-    height: 34px;
-    width: 34px;
+    position: absolute;
+    height: 22px;
+    width: 22px;
     display: inline-block;
     cursor: pointer;
+    top: 10px;
+    right: 10px;
 
-    &:after,&:before {
+    &:after,
+    &:before {
       content: '';
       display: block;
       position: absolute;
       left: 0;
       right: 0;
-      top: calc(50% - 3px);
-      height: 5px;
-      border-radius: 3px;
-      background-color: #083d6f;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 3px;
+      border-radius: 2px;
+      background-color: $corporative;
     }
+
     &:before{
       transform: rotate(-45deg);
-
     }
+
     &:after{
       transform: rotate(45deg);
     }
