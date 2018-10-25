@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 24-10-2018 a las 12:01:38
+-- Tiempo de generación: 25-10-2018 a las 10:51:47
 -- Versión del servidor: 5.5.60-MariaDB
 -- Versión de PHP: 7.1.14
 
@@ -2925,7 +2925,7 @@ CREATE TABLE `cargoweb_users_users` (
 --
 
 INSERT INTO `cargoweb_users_users` (`id`, `sort_order`, `created_at`, `created_by_id`, `updated_at`, `updated_by_id`, `deleted_at`, `email`, `username`, `password`, `display_name`, `first_name`, `last_name`, `activated`, `enabled`, `permissions`, `last_login_at`, `remember_token`, `activation_code`, `reset_code`, `last_activity_at`, `ip_address`) VALUES
-(1, 1, '2018-06-29 13:06:45', 1, '2018-10-17 16:32:06', 1, NULL, 'admin@cargoservicesgroup.com', 'admin', '$2y$10$pssuJA/f7hAtjiVxBGMtR.LqPaUAhVsI.y.6bB/BDYDUIFwS0qLiq', 'Administrator', NULL, NULL, 1, 1, NULL, '2018-10-17 15:43:36', 'cVw5ecXKFPmIQbWfDYgiMGjd7IOcaQqaeEDIsFihf2a1dGpdODWgKmfWdBTn', NULL, NULL, '2018-10-17 16:32:06', '92.59.176.230'),
+(1, 1, '2018-06-29 13:06:45', 1, '2018-10-24 16:24:39', 1, NULL, 'admin@cargoservicesgroup.com', 'admin', '$2y$10$pssuJA/f7hAtjiVxBGMtR.LqPaUAhVsI.y.6bB/BDYDUIFwS0qLiq', 'Administrator', NULL, NULL, 1, 1, NULL, '2018-10-24 13:53:05', 'cVw5ecXKFPmIQbWfDYgiMGjd7IOcaQqaeEDIsFihf2a1dGpdODWgKmfWdBTn', NULL, NULL, '2018-10-24 16:24:39', '92.59.176.230'),
 (2, 2, '2018-06-29 13:06:46', NULL, '2018-06-29 13:06:46', NULL, NULL, 'demo@pyrocms.com', 'demo', '$2y$10$JopgGMRuuXyZu5aGgPtzVuOwdODoSP6/5eV0JkvEtTMcp.sno7BmK', 'Demo User', NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
