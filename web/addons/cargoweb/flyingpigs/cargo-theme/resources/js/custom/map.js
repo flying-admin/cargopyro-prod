@@ -69,7 +69,7 @@ xmlhttpmyip.onreadystatechange = function() {
 xmlhttpmyip.open("GET", urlmyip, true);
 xmlhttpmyip.send();
 
-locations = [
+locations_old = [
   {lat: 40.404867,  lng: -3.673120,   tag: 'madrid',    tel: '+34 914 341 820',   mail: 'infomad@cargoservicesgroup.com'}, // Madrid
   {lat: 41.389582,  lng: 2.173952,    tag: 'barcelona', tel: '+34 933 019 633',   mail: 'infobcn@cargoservicesgroup.com'}, // Barcelona
   {lat: 42.810118,  lng: -1.660274,   tag: 'pamplona',  tel: '+34 948 172 245',   mail: 'infopna@cargoservicesgroup.com'}, // Pamplona
